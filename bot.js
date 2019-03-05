@@ -86,4 +86,4 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 
 });
 
-client.login(NTUyNTczODMwMTI4NzMwMTE0.D2Bqsw.gF7-KXXrW4tufs0Ba09vPqPQLWc);
+client.login(NTUyNTczODMwMTI4NzMwMTE0.D2Bt4A.Z8d_yVF2fgIJ6YSTr8pqSfsavj8);
